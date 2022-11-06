@@ -15,6 +15,7 @@ export type AirtablePluginOptions = {
 
 export type AirtableAttachment = {
   id: string;
+  isImage: boolean;
   height: number;
   width: number;
   url: string;

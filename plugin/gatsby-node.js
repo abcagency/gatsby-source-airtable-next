@@ -170,11 +170,8 @@ const onCreateNode = async (args, options) => {
                 id: airtableAttachmentNodeId,
                 airtableId: obj.id,
                 url: obj.url,
-                width: obj.width,
-                height: obj.height,
                 filename: obj.filename,
                 parent: node.id,
-                placeholderUrl: obj.thumbnails.small.url,
                 mimeType: obj.type,
                 pluginName: "gatsby-source-airtable-next",
                 internal: {
@@ -182,6 +179,13 @@ const onCreateNode = async (args, options) => {
                   contentDigest: node.internal.contentDigest,
                 },
               };
+              // if it looks like an image, add additional properties
+              if (obj.width && obj.height && typeof obj.thumbnails === "object" && !Array.isArray(obj.thumbnails) && obj.thumbnails !== null) {
+                airtableAttachmentNode.isImage = true;
+                airtableAttachmentNode.width = obj.width;
+                airtableAttachmentNode.height = obj.height;
+                airtableAttachmentNode.placeholderUrl = obj.thumbnails.small.url;
+              }
               createNode(airtableAttachmentNode);
               await cache.set(airtableAttachmentNodeId, `${Date.now()}`);
             }
