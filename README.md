@@ -21,7 +21,7 @@ or
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-source-airtable-next",
+      resolve: "@abcagency/gatsby-source-airtable-next",
       options: {
         apiKey: "AIRTABLE_KEY",
         refreshInterval: 60000 * 5, // (5 minutes) optional
