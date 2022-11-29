@@ -1,5 +1,6 @@
 {
-  "private": true,
+  "name": "@abcagency/gatsby-source-airtable-next",
+  "version": "1.0.0",
   "workspaces": [
     "demo",
     "plugin"

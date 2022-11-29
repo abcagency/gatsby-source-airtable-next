@@ -9,11 +9,11 @@ Airtable source plugin, built for modern Gatsby sites
 
 ## How to install
 
-`npm install gatsby-source-airtable-next`
+`npm install @abcagency/gatsby-source-airtable-next`
 
 or
 
-`yarn add gatsby-source-airtable-next`
+`yarn add @abcagency/gatsby-source-airtable-next`
 
 ## How to use
 
