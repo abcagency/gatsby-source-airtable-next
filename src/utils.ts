@@ -8,10 +8,7 @@ export const isAttachmentField = (obj: { [key: string]: any }) => {
     obj.id &&
     obj.url &&
     obj.type &&
-    // obj.width &&
-    // obj.height &&
     obj.filename
-    // && (typeof obj.thumbnails === "object" && !Array.isArray(obj.thumbnails) && obj.thumbnails !== null)
   ) {
     return true;
   }
@@ -20,17 +17,19 @@ export const isAttachmentField = (obj: { [key: string]: any }) => {
 };
 
 export const getExtension = (type: string) => {
-  let extention = type.split("/")[1];
-  switch (extention) {
+  let extension = type.split("/")[1];
+  switch (extension) {
     case "jpeg":
-      extention = ".jpg";
+      extension = ".jpg";
       break;
     case "svg+xml":
-      extention = ".svg";
+      extension = ".svg";
       break;
+    case ".document":
+      extension = ".docx";
     default:
-      extention = `.${extention}`;
+      extension = `.${extension}`;
       break;
   }
-  return extention;
+  return extension;
 };
