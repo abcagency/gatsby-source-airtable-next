@@ -15,12 +15,7 @@ const isAttachmentField = (obj) => {
     obj.id &&
     obj.url &&
     obj.type &&
-    obj.width &&
-    obj.height &&
-    obj.filename &&
-    typeof obj.thumbnails === "object" &&
-    !Array.isArray(obj.thumbnails) &&
-    obj.thumbnails !== null
+    obj.filename
   ) {
     return true;
   }

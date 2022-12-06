@@ -1,6 +1,6 @@
 {
   "name": "@abcagency/gatsby-source-airtable-next",
-	"version": "1.0.4",
+	"version": "1.0.5",
   "description": "Gatsby source plugin for Airtable, build for Gatsby v4 and beyond 🚀",
   "keywords": [
     "airtable",
